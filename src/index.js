@@ -5,10 +5,11 @@ import App from './App';
 
 import { store } from './store/index';
 import { Provider } from 'react-redux';
+import AppReduxThunk from './AppReduxThunk';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+    <AppReduxThunk />
   </Provider>
 );

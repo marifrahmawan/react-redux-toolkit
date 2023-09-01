@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isVisible: false,
+  notification: null,
 };
 
 export const uiSlice = createSlice({
@@ -11,9 +12,16 @@ export const uiSlice = createSlice({
     showCartHandler(state) {
       state.isVisible = !state.isVisible;
     },
+    showNotification(state, action) {
+      state.notification = {
+        status: action.payload.status,
+        title: action.payload.title,
+        message: action.payload.message,
+      };
+    },
   },
 });
 
-export const { showCartHandler } = uiSlice.actions;
+export const { showCartHandler, showNotification } = uiSlice.actions;
 
 export default uiSlice.reducer;
